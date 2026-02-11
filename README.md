@@ -108,6 +108,7 @@ Start
 8.Stop
 ## Program:
 Server side program
+```
 import socket        
 s = socket.socket()         
 print ("Socket successfully created")
@@ -120,14 +121,17 @@ while True:
   c, addr = s.accept()     
   print ('Got connection from', addr )
   c.send('Thank you for connecting'.encode()) 
-c.close() 
+c.close()
+```
 Client side program
+```
 import socket             
 s = socket.socket()         
 port = 12345                
 s.connect(('127.0.0.1', port)) 
 print (s.recv(1024).decode())
 s.close()
+```
 ## Output:
 Server side:
 <img width="1478" height="743" alt="542618359-8bcbfa00-dd5f-4c72-a62b-d6fd6dba0a98" src="https://github.com/user-attachments/assets/ae30347b-b060-44d8-98d7-8bcb07cafd4d" />
