@@ -52,6 +52,87 @@ Socket programming finds applications in various domains, including web developm
 3.	File Transfer Protocol: Protocols like FTP (File Transfer Protocol) utilize socket programming for transferring files between a client and a server.
 4.	Networked Games: Online multiplayer games rely on socket programming to facilitate communication between game clients and servers.
 5.	RPC mechanisms: which allow processes to execute code on a remote server, often use socket programming for communication.
+## Algorithm:
+Server Side:
+
+1.Start
+
+2.Import the socket module
+
+3.Create a socket using socket.socket()
+
+4.Display message “Socket successfully created”
+
+5.Assign a port number (12345)
+
+6.Bind the socket to the specified port using bind()
+
+7.Display message “Socket binded to port”
+
+8.Put the socket into listening mode using listen()
+
+9.Display message “Socket is listening”
+
+10.Enter an infinite loop
+
+11.Accept incoming client connection using accept()
+
+12.Display the client address
+
+12.Send a message to the client using send()
+
+13.Close the client connection
+
+14.Repeat steps 11–14 for new clients
+
+15.Stop
+
+Client Side:
+
+Start
+
+1.Import the socket module
+
+2.Create a socket using socket.socket()
+
+3.Assign the server port number (12345)
+
+4.Connect to the server using connect() with IP address 127.0.0.1
+
+5.Receive data from the server using recv()
+
+6.Decode and display the received message
+
+7.Close the socket connection
+
+8.Stop
+## Program:
+Server side program
+import socket        
+s = socket.socket()         
+print ("Socket successfully created")
+port = 12345                
+s.bind(('', port))         
+print ("socket binded to %s" %(port)) 
+s.listen(5)     
+print ("socket is listening")            
+while True: 
+  c, addr = s.accept()     
+  print ('Got connection from', addr )
+  c.send('Thank you for connecting'.encode()) 
+c.close() 
+Client side program
+import socket             
+s = socket.socket()         
+port = 12345                
+s.connect(('127.0.0.1', port)) 
+print (s.recv(1024).decode())
+s.close()
+## Output:
+Server side:
+<img width="1478" height="743" alt="542618359-8bcbfa00-dd5f-4c72-a62b-d6fd6dba0a98" src="https://github.com/user-attachments/assets/ae30347b-b060-44d8-98d7-8bcb07cafd4d" />
+Client side:
+<img width="1481" height="902" alt="542619764-b8067a10-0fb5-49bf-a2fa-93f27807beec" src="https://github.com/user-attachments/assets/d7a7e448-ae19-4c0a-92c6-890083715918" />
 
 
 ## Result:
