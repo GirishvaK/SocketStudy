@@ -55,88 +55,84 @@ Socket programming finds applications in various domains, including web developm
 ## Algorithm:
 Server Side:
 
-1.Start
+1.Start the program.
 
-2.Import the socket module
+2.Import the socket module.
 
-3.Create a socket using socket.socket()
+3.Create a socket using socket.socket().
 
-4.Display message “Socket successfully created”
+4.Define a port number for communication.
 
-5.Assign a port number (12345)
+5.Bind the socket to the IP address (127.0.0.1) and the specified port.
 
-6.Bind the socket to the specified port using bind()
+6.Put the socket into listening mode using listen().
 
-7.Display message “Socket binded to port”
+7.Wait for a client connection using accept().
 
-8.Put the socket into listening mode using listen()
+8.When a client connects, display the client address.
 
-9.Display message “Socket is listening”
+9.Send a connection message to the client.
 
-10.Enter an infinite loop
+10.Close the client connection.
 
-11.Accept incoming client connection using accept()
-
-12.Display the client address
-
-12.Send a message to the client using send()
-
-13.Close the client connection
-
-14.Repeat steps 11–14 for new clients
-
-15.Stop
+11.Stop the program.
 
 Client Side:
 
 Start
 
-1.Import the socket module
+1.Start the program.
 
-2.Create a socket using socket.socket()
+2.Import the socket module.
 
-3.Assign the server port number (12345)
+3.Create a socket using socket.socket().
 
-4.Connect to the server using connect() with IP address 127.0.0.1
+4.Specify the server IP address and port number.
 
-5.Receive data from the server using recv()
+5.Connect to the server using connect().
 
-6.Decode and display the received message
+6.Receive the message sent by the server using recv().
 
-7.Close the socket connection
+7.Display the received message.
 
-8.Stop
+8.Close the socket connection.
+
+9.Stop the program.
+
 ## Program:
 Server side program
 ```
-import socket        
-s = socket.socket()         
-print ("Socket successfully created")
-port = 12345                
-s.bind(('', port))         
-print ("socket binded to %s" %(port)) 
-s.listen(5)     
-print ("socket is listening")            
-while True: 
-  c, addr = s.accept()     
-  print ('Got connection from', addr )
-  c.send('Thank you for connecting'.encode()) 
+import socket
+s=socket.socket()
+print("Socket successfully created")
+port=12345
+s.bind(('127.0.0.1',port))
+print("Socket binded to %s" %(port))
+s.listen(5)
+print("Socket is listening")
+while True:
+    c,addr=s.accept()
+    print('Got connection from',addr)
+    c.send('Thank you for connecting'.encode())
 c.close()
 ```
 Client side program
 ```
-import socket             
-s = socket.socket()         
-port = 12345                
-s.connect(('127.0.0.1', port)) 
-print (s.recv(1024).decode())
+import socket
+
+s=socket.socket()
+port=12345
+s.connect(('127.0.0.1',port))
+
+print(s.recv(1024).decode())
 s.close()
 ```
 ## Output:
 Server side:
-<img width="1478" height="743" alt="542618359-8bcbfa00-dd5f-4c72-a62b-d6fd6dba0a98" src="https://github.com/user-attachments/assets/ae30347b-b060-44d8-98d7-8bcb07cafd4d" />
+<img width="649" height="319" alt="image" src="https://github.com/user-attachments/assets/0b3adfd6-af89-4c33-90a2-31779b02a8f4" />
+
 Client side:
-<img width="1481" height="902" alt="542619764-b8067a10-0fb5-49bf-a2fa-93f27807beec" src="https://github.com/user-attachments/assets/d7a7e448-ae19-4c0a-92c6-890083715918" />
+<img width="630" height="284" alt="image" src="https://github.com/user-attachments/assets/9cd531d7-5ecd-4820-8cd7-e0a072359d1d" />
 
 
 ## Result:
