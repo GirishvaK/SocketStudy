@@ -129,9 +129,11 @@ s.close()
 ```
 ## Output:
 Server side:
+
 <img width="649" height="319" alt="image" src="https://github.com/user-attachments/assets/0b3adfd6-af89-4c33-90a2-31779b02a8f4" />
 
 Client side:
+
 <img width="630" height="284" alt="image" src="https://github.com/user-attachments/assets/9cd531d7-5ecd-4820-8cd7-e0a072359d1d" />
 
 
